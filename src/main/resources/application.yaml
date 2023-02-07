@@ -1,0 +1,21 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
+    include-exception: false
+  port: 8080
+  servlet:
+    context-path: /
+
+##
+# Spring Application
+##
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      topic: venda
+      client-id: venda
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
